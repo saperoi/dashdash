@@ -42,4 +42,4 @@ for im, name, i in zip(image_list, names, nums):
 
     
     im.save('./' + folder + '/new/' + name)
-    print(str(i) + " finished")
+    print(name + " finished")
