@@ -26,7 +26,7 @@ def graph():
   d = 0
   while d <= 1.01:
     path = str(d) + '.png'
-    plt.figure()
+    plt.figure(figsize=[64, 48])
     plt.plot(x, [fx_csc(i) for i in x], 'k')
     plt.savefig('csc/' + path)
     plt.close()
