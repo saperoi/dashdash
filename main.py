@@ -13,7 +13,7 @@ ax.spines['top'].set_color('none')
 
 x = np.linspace(-5,5,100)
 
-for d <= 1:
+while d <= 1:
   y = fx.animone
   d += 0.04
   plt.plot(x,y, 'r')
