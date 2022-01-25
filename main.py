@@ -1,8 +1,6 @@
-import matplotlib.mathtext as mt
 import matplotlib.pyplot as plt
 import numpy as np
-import fx
-d = 0
+import math
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
@@ -11,14 +9,23 @@ ax.spines['bottom'].set_position('center')
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 
-x = np.linspace(-5,5,100)
+def run():
+  x = np.linspace(-5, 5, 100)
+  d = 0
+  while d <= 1:
+    f(x) = np.vectorize(x**((-1)**math.ceil(x-d)))
+    path = "./animone/" + d + '.png'
+    plt.plot(x,f(x), 'r')
+    plt.show(hold=False)
+    plt.savefig(path)
+    fig.close()
+    plt.close()
+    d += 0.04
 
-while d <= 1:
-  y = fx.animone
-  d += 0.04
-  plt.plot(x,y, 'r')
-  plt.show(hold=False)
-  plt.savefig('animone.' + d + '.png')
-  fig.close()
-  plt.close()
+# reg = v * (-1)**math.ceil((x-d)/a) + s
 
+# animi = x**((-1)**math.ceil(x-d))
+
+# animii = (-1)**math.ceil(x**((-1)**math.ceil(x-d)-d))
+
+run()
