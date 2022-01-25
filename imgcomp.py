@@ -2,7 +2,7 @@ from PIL import Image, ImageEnhance
 import random
 import glob
 import numpy as np
-import os
+import math
 
 folder = 'animi'
 
@@ -30,8 +30,8 @@ for im, name, i in zip(image_list, names, nums):
     data = np.array(im)
     width, height = im.size
     old_color = (0, 0, 0, 255)
-    new_color1 = (rc(), rc(), rc(), 255-5*i)
-    new_color2 = (0, 0, 0, 255-5*i)
+    new_color1 = (rc(), rc(), rc(), math.ceil(255-2.5*i))
+    new_color2 = (0, 0, 0, math.ceil(255-2.5*i))
     pix = im.load()
     for x in range(0, width, 1):
         for y in range(0, height, 1):
