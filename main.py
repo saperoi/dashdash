@@ -3,31 +3,27 @@ import numpy as np
 import math
 
 # functions
-
 def fx_flop(x):
   return (-1)**math.ceil(x-d)
+def fx_fullflop(x):
+  return v*(-1)**math.ceil((x-d)/a) + s
 
+#goniometric
 def fx_sin(x):
   return (-1)**(x/math.pi - 0.5)
-  
 def fx_cos(x):
   return (-1)**(x/math.pi)
-
 def fx_tan(x):
   return ((-1)**(x/math.pi - 0.5))/(-1)**(x/math.pi - 0.5)
-  
 def fx_cot(x):
   return (-1)**(x/math.pi - 0.5)/((-1)**(x/math.pi - 0.5))
-
 def fx_sec(x):
   return 1/(-1)**(x/math.pi)
-
 def fx_csc(x):
   return 1/(-1)**(x/math.pi - 0.5)
 
 def graph():
   x = x_gen()
-  global d
   d = 0
   while d <= 1.01:
     path = str(d) + '.png'
@@ -47,5 +43,15 @@ def x_gen():
     i += 0.01
     i = round(i, 2)
   return j
+
+
+global v
+v = 1
+global d
+d = 0
+global a
+a = 1
+global s
+s = 0
 
 graph()
