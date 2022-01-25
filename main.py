@@ -2,24 +2,24 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-fig = plt.figure()
-ax = fig.add_subplot(1, 1, 1)
-ax.spines['left'].set_position('center')
-ax.spines['bottom'].set_position('center')
-ax.spines['right'].set_color('none')
-ax.spines['top'].set_color('none')
+def f(x):
+  a = []
+  for i in x:
+    p = (-1)**math.ceil(i-d)
+    a.append(p)
+  return a
 
 def run():
-  x = np.linspace(-5, 5, 100)
+  x = [-5, -4.75, -4.5, -4.25, -4, -3.75, -3.5, -3.25, -3, -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75, 5]
+  global d
   d = 0
-  while d <= 1:
-    f(x) = (-1)**math.ceil(x-d)
-    path = "./animone/" + d + '.png'
-    plt.plot(x,f(x), 'r')
-    plt.show(hold=False)
+  while d <= 1.01:
+    path = str(d) + '.png'
+    plt.figure()
+    plt.plot(x,f(x), 'k')
     plt.savefig(path)
-    fig.close()
     plt.close()
+    print(str(d) + " completed")
     d += 0.04
 
 # reg = v * (-1)**math.ceil((x-d)/a) + s
