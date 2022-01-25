@@ -30,12 +30,16 @@ for im, name, i in zip(image_list, names, nums):
     data = np.array(im)
     width, height = im.size
     old_color = (0, 0, 0, 255)
-    new_color = (rc(), rc(), rc(), 255-5*i)
+    new_color1 = (rc(), rc(), rc(), 255-5*i)
+    new_color2 = (0, 0, 0, 255-5*i)
     pix = im.load()
     for x in range(0, width, 1):
         for y in range(0, height, 1):
             if im.getpixel((x, y)) == old_color:
-                im.putpixel((x, y), new_color)
+                im.putpixel((x, y), new_color1)
+            else:
+                im.putpixel((x, y), new_color2)
+
     
     im.save('./' + folder + '/new/' + name)
-    im.show()
+    print(str(i) + " finished")

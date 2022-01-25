@@ -24,11 +24,11 @@ def fx_csc(x):
 def graph():
   x = x_gen()
   d = 0
-  while d <= 1.01:
+  while d <= 2.01:
     path = str(d) + '.png'
-    plt.figure(figsize=[64, 48])
-    plt.plot(x, [fx_csc(i) for i in x], 'k')
-    plt.savefig('csc/' + path)
+    plt.figure(figsize=[19.2, 14.4])
+    plt.plot(x, [fx_flop(i) for i in x], 'k')
+    plt.savefig('animi/' + path)
     plt.close()
     print(str(d) + " completed")
     d += 0.04
