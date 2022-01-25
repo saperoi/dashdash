@@ -13,7 +13,7 @@ def run():
   x = np.linspace(-5, 5, 100)
   d = 0
   while d <= 1:
-    f(x) = np.vectorize(x**((-1)**math.ceil(x-d)))
+    f(x) = (-1)**math.ceil(x-d)
     path = "./animone/" + d + '.png'
     plt.plot(x,f(x), 'r')
     plt.show(hold=False)
